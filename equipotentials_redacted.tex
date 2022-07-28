@@ -1,0 +1,203 @@
+\documentclass{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+%\usepackage{hyperref}       % hyperlinks
+%\usepackage{url}            % simple URL typesetting
+%\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+%\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+%\usepackage{microtype}      % microtypography
+%\usepackage{lipsum}
+%\usepackage{fancyhdr}       % header
+\usepackage{graphicx}       % graphics
+\graphicspath{{./images/}}     % organize your images and other figures under media/ folder
+
+
+  
+%% Title
+\title{Equipotential curves on water surface}
+
+\author{
+  Dmitriy V. Spinov, Kirill A. Smirnov \\
+  Letovo School \\
+  Moscow\\
+  \texttt{spinov.d@phystech.edu} \\
+  \texttt{smirnov4kirill@yandex.ru} \\
+}
+
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+Nowadays electric current in liquids is widely used in industry, for example - in electrolysis and electroosmosis. In this case, it is necessary to predict the current at each point of the liquid. The central question of the research is how voltage is distributed in water continuum and what affects the voltage. Long-known Maxvell's equations are used to develompent of theoretical model, and the model predictions are verified by experiments. Model predictions can be used in industry to optimize electrolysis process.
+\end{abstract}
+
+
+\section{Introduction}
+An electric field arises in the space surrounding an electric charge. The electric field exerts an electric force. The potential at a point in the electric field is the work done in bringing a unit positive charge from infinity to the given point. If charge distribution does not change over time, the potential of the points is constant. An equipotential curve is a curve on which the potential is same over the curve. The displacement of a charge over such a curve would require no work.\par
+
+If two electrodes are placed in a conducting continuum and a voltage is applied to them, equipotential curves arise in the space. The potential of a point can be measured with voltmeter. Several points with the same potential form an equipotental curve. We studied the potentials around two point electrodes placed into an electrolytic tank with water as an electrolyte.
+
+
+\cite{ }
+
+
+
+
+\section{Materials and Methods}
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{scheme1.pdf}}
+\caption{Photo of the experiment setup}
+\label{fig:mesh1}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{20220209_143045.jpg}}
+\caption{Photo of the biaxical manipulator}
+\label{fig:mesh2}
+\end{minipage}
+\end{center}
+\end{figure}
+
+For the simplest experimental setup are needed the folowing materials: container with water, DC power suply with two electrodes and a voltmeter. Put the electrodes in the water, turn on the power and measure voltage with voltmeter. Also a checkered sheet can be put in the water to know the coordinates of the point you are measuring.\par
+
+For making a significant number of experiments this method is time consuming, so we robotized the measuring process. We used a biaxical manipulator, that can move the voltmeter probe and write the measure value and coordinates of the probe to a file on a computer. Photo of the manipulator is in the figure \ref{fig:mesh2}.\par
+
+It is important to control the substances dissolved in water, so we used distilled water solution with $Na_2SO_4$, because sodium sulfate does not oxidize electrodes, except for sodium chloride, which we used at first. Electrode oxidizing is harmful, because it changes the composition of the water.\par
+
+\section{Theory}
+
+
+To describe current in continuum we can use Gauss's law $$\nabla\cdot E = \frac{\rho}{\varepsilon_0 \varepsilon_r}$$ which represents the relations betwen electric field and charge density in any point.\par
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{theory plot.pdf}
+    \caption{Voltage plot}
+    \label{fig:mesh3}
+\end{figure}
+
+We assumed that away from the electrodes water is electrically neutral, what can be verified with electroscope, so $$\rho = 0 \Rightarrow \nabla \cdot E = 0$$ what is a Laplacian equation, which can be solved knowing boundary conditions. Assuming boundary conditions are -1 V near one electrode and +1 V near the other, we can solve the equation using Wofram Mathematica. The plot is in the figure \ref{fig:mesh3}. \par
+
+
+
+\section{Observations and Experimental results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb!]
+\begin{center}
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{8.8 d raw.pdf}}
+%\caption{Photo of the experiment setup} %% подпись к рисунку
+%\label{fig:mesh1} %% метка рисунка для ссылки на него
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{vert theory.pdf}}
+%\caption{Photo of the biaxical manipulator} %% подпись к рисунку
+%\label{fig:mesh2} %% метка рисунка для ссылки на него
+\end{minipage}
+\caption{Comparison of theoretical prediction and experiment data for 8.8 grams to 1 kg of water}
+\label{fig:mesh4}
+
+\vfill
+
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{2.3 g raw.pdf}}
+%\caption{Photo of the experiment setup} %% подпись к рисунку
+%\label{fig:mesh1} %% метка рисунка для ссылки на него
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{hor theory.pdf}}
+%\caption{Photo of the biaxical manipulator} %% подпись к рисунку
+%\label{fig:mesh2} %% метка рисунка для ссылки на него
+\end{minipage}
+\caption{Comparison of theoretical prediction and experiment data for 2.3 grams to 1 kg of water}
+\label{fig:mesh5}
+
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\begin{figure}[htb!]
+\begin{center}
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=0.9\linewidth]{distilled VAC.pdf}}
+%\caption{Photo of the experiment setup} %% подпись к рисунку
+%\label{fig:mesh1} %% метка рисунка для ссылки на него
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=0.9\linewidth]{0.5 g VAC.pdf}}
+%\caption{Photo of the biaxical manipulator} %% подпись к рисунку
+%\label{fig:mesh2} %% метка рисунка для ссылки на него
+\end{minipage}
+
+\vfill
+
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=0.9\linewidth]{2.0 g VAC.pdf}}
+%\caption{Photo of the experiment setup} %% подпись к рисунку
+%\label{fig:mesh1} %% метка рисунка для ссылки на него
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=0.9\linewidth]{9.0 g VAC.pdf}}
+%\caption{Photo of the biaxical manipulator} %% подпись к рисунку
+%\label{fig:mesh2} %% метка рисунка для ссылки на него
+\end{minipage}
+
+\end{center}
+\caption{Volt-Ampere Characteristics}
+\label{fig:mesh6}
+\end{figure}
+
+
+As we can see in the figures \ref{fig:mesh4} and \ref{fig:mesh5}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 20 \%.} It is caused by the fact theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. For example: if we apply 5V to the electrode, it should be near 5V in water near the electrode. But it does not. \par
+
+As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. This voltage drop effect can be explained by the phenomenon of double electric layer formation. Free ions, contained in excess in solution, accumulate near the electrodes and create a voltage drop of up to 2V when 5V is applied to the electrode [3].\par
+
+We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V 
+
+
+
+
+As we can see in the figure \ref{fig:mesh6}, all the plots, except for Characteristics of distilled water, look simular: there are 3 areas on a plot, those can be better discerned in green plot in figure \ref{fig:mesh6}. 
+
+\begin{enumerate}
+\item The first piece up to 2V: according to electric layer explanation, the layers formed by free ions compensate for the potential difference between the electrodes, hence effective potential difference is close to 0, therefore current is close to 0.
+
+\item The second piece from 2.5V to 3.5V. There is transition to a linear section. This piece can be called "activation", and the "activation voltage" we measured is about 3V.
+
+\item The third piece with 3.5V - linear dependence. The electric layers are fully formed and no longer change. The solution can be represented as a series connection of a resistor and a battery, where electric layers are the battery and continuum of water is the resistor. The resistance of the continuum of water depends on the salinity of the solution.
+\end{enumerate}
+
+As we observed, "activation voltage" depends on the geometry and size of the electrodes. We used a medical needle 1 mm thick.
+
+
+\section{Acknowledgements}
+We are thankfull to Artem D. Sukhov for help with writing the article and Ivan Kolesnikov for providing the nessesary support with theory. We are also grateful to Pavel A. Kotin for providing the necessary conditions for the research.
+
+
+
+%Bibliography
+\bibliographystyle{unsrt}  
+\bibliography{references}  
+\begin{enumerate}
+\item Khaparde, Rajesh, and H Pradhan. An Experiment on Equipotential Curves.
+\item Kalashnikov, Elektrichestvo. "Nauka, " Glav. Red. Fiziko-Matematicheskoĭ Lit-Ry, Moskva, Nauka, " Glav. Red. Fiziko-Matematicheskoy Lit-Ry, 1985.
+\item A. N. Frumkin, V. S. Bagotsky, Z. A. Iofa, and B. N. Kabanov, Kinetics of Electrode Processes, Moscow State University, 1952.
+
+\end{enumerate}
+
+\end{document}
