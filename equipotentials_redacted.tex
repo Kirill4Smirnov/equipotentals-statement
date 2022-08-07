@@ -198,17 +198,18 @@ We assumed that away from the electrodes water is electrically neutral, what can
 \end{figure}
 
 
-As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif6}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 20 \%.} It is caused by the fact theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. For example: if we apply 5V to the electrode, it should be near 5V in water near the electrode. But it does not. \par
+As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif6}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the pheneomenon named double electric layer [2]. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
 
-As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. This voltage drop effect can be explained by the phenomenon of double electric layer formation. Free ions, contained in excess in solution, accumulate near the electrodes and create a voltage drop of up to 2V when 5V is applied to the electrode [3].\par
+As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. Also, voltage drop depends on the shape of electrodes and time elapsed since applying constant voltage. The effect of voltage drop collapses if the electrolyte gets in motion (perhaps, double layer disintegrate from fluid movement).
 
-We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V 
+% This voltage drop effect can be explained by the phenomenon of double electric layer formation. Free ions, contained in excess in solution, accumulate near the electrodes and create a voltage drop of up to 2V when 5V is applied to the electrode [3].
+\par
 
-
-
+We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V.
 
 As we can see in the figure \ref{fig:mesh6}, all the plots, except for Characteristics of distilled water, look simular: there are 3 areas on a plot, those can be better discerned in green plot in figure \ref{fig:mesh6}. 
 
+%characteristics analysis
 \begin{enumerate}
 \item The first piece up to 2V: according to electric layer explanation, the layers formed by free ions compensate for the potential difference between the electrodes, hence effective potential difference is close to 0, therefore current is close to 0.
 
@@ -217,7 +218,7 @@ As we can see in the figure \ref{fig:mesh6}, all the plots, except for Character
 \item The third piece with 3.5V - linear dependence. The electric layers are fully formed and no longer change. The solution can be represented as a series connection of a resistor and a battery, where electric layers are the battery and continuum of water is the resistor. The resistance of the continuum of water depends on the salinity of the solution.
 \end{enumerate}
 
-As we observed, "activation voltage" depends on the geometry and size of the electrodes. We used a medical needle 1 mm thick.
+As we observed, "activation voltage" depends on the geometry and size of the electrodes. We used a medical needle 1 mm thick. !!!!!!!!!!!!!!!!!!fix later!!!!!!!!!!!!!!1!
 
 
 \section{Acknowledgements}
@@ -230,7 +231,7 @@ We are thankfull to Artem D. Sukhov for help with writing the article and Ivan K
 \bibliography{references}  
 \begin{enumerate}
 \item Khaparde, Rajesh, and H Pradhan. An Experiment on Equipotential Curves.
-\item Kalashnikov, Elektrichestvo. "Nauka, " Glav. Red. Fiziko-Matematicheskoĭ Lit-Ry, Moskva, Nauka, " Glav. Red. Fiziko-Matematicheskoy Lit-Ry, 1985.
+%\item Kalashnikov, Elektrichestvo. "Nauka, " Glav. Red. Fiziko-Matematicheskoĭ Lit-Ry, Moskva, Nauka, " Glav. Red. Fiziko-Matematicheskoy Lit-Ry, 1985.
 \item A. N. Frumkin, V. S. Bagotsky, Z. A. Iofa, and B. N. Kabanov, Kinetics of Electrode Processes, Moscow State University, 1952.
 \item Carl Friedrich Gauss. [Mathematische Physik]. Gottingen, Dieterich, 1877.
 
