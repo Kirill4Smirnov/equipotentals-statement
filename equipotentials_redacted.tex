@@ -40,45 +40,52 @@ Nowadays electric current in liquids is widely used in industry, for example - i
 \end{abstract}
 
 
-\section{Introduction}
+\section{Introduction}            %%%%%%%%%%%%%%%%%            
 An electric field arises in the space surrounding an electric charge. The electric field exerts an electric force. The potential at a point in the electric field is the work done in bringing a unit positive charge from infinity to the given point. If charge distribution does not change over time, the potential of the points is constant. An equipotential curve is a curve on which the potential is same over the curve. The displacement of a charge over such a curve would require no work.\par
 
 If two electrodes are placed in a conducting continuum and a voltage is applied to them, equipotential curves arise in the space. The potential of a point can be measured with voltmeter. Several points with the same potential form an equipotental curve. We studied the potentials around two point electrodes placed into an electrolytic tank with water as an electrolyte.
 
-
+!!!!!!!!!!!!!!!!!complete later!!!!!!!!!!!!!!!!!!!
 \cite{qqqqq}
 
 
-
-
-\section{Materials and Methods}
+\section{Experimental Setup}
 
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.47\linewidth}
 \center{\includegraphics[width=1\linewidth]{scheme1.pdf}}
-\caption{Scheme of the experiment setup}
+\caption{Scheme of the manual experiment setup}
 \label{fig:mesh1}
 \end{minipage}
 \hfill
 \begin{minipage}[h]{0.47\linewidth}
 \center{\includegraphics[width=1\linewidth]{scheme2.pdf}}
-\caption{Scheme of the biaxical manipulator}
+\caption{Scheme of the experiment using the biaxical manipulator}
 \label{fig:mesh2}
 \end{minipage}
 \end{center}
 \end{figure}
 
-For the simplest experimental setup are needed the folowing materials: container with water, DC power suply with two electrodes and a voltmeter. Put the electrodes in the water, turn on the power and measure voltage with voltmeter. Also a checkered sheet can be put in the water to know the coordinates of the point you are measuring.\par
+For the simplest experimental setup are needed the folowing materials: container with electrolyte (distilled water), DC power suply with two electrodes and a voltmeter. Put the electrodes in the water, turn on the power and measure voltage with voltmeter. Also a non-conductive checkered sheet can be put in the water to know the coordinates of the point you are measuring. Scheme is in the figure \ref{fig:mesh1}.  \par
 
-For making a significant number of experiments this method is time consuming, so we robotized the measuring process. We used a biaxical manipulator, that can move the voltmeter probe and write the measure value and coordinates of the probe to a file on a computer. Photo of the manipulator is in the figure \ref{fig:mesh2}.\par
+For making a significant amount of experiments this method is time consuming, so we robotized the measuring process. We used a biaxical manipulator, that can move the voltmeter probe and write the measure value and coordinates of the probe to a file on a computer. Scheme of the experiment using the manipulator is in the figure \ref{fig:mesh2}. Manipulator characteristics:
+\begin{enumerate}
+\item Work zone: 383 mm x 367 mm
+\item Accuracy: 0.1 mm
+\item Stepper motors 42BYG
+\end{enumerate}
 
-It is important to control the substances dissolved in water, so we used distilled water solution with $Na_2SO_4$, because sodium sulfate does not oxidize electrodes, except for sodium chloride, which we used at first. Electrode oxidizing is harmful, because it changes the composition of the water.\par
+In both experimental setups we used \textbf{non-conductive container} to eliminate the possibility of current flowing through the walls.\par
+
+It is important to control the substances dissolved in water, so we used distilled water solution with $Na_2SO_4$, because sodium sulfate does not oxidize electrodes, except for sodium chloride, which we used at first. Electrode oxidizing is harmful, because it changes the composition of the water, what can affect the potentials in the electrolyte.\par
+
+As we observed, potentials are not time-independed some time after applying voltage. Voltage difference between electrodes and near electrolyte is incresaing from 0 to fixed amount (what causes voltage drop near electrodes), so we waited for 1 minute until the potentials get stabilized. More about the phenomenon later. \par
+
 
 \section{Theory}
 
-
-To describe current in continuum we can use Gauss's law $$\nabla\cdot E = \frac{\rho}{\varepsilon_0 \varepsilon_r}$$ which represents the relations betwen electric field and charge density in any point.\par
+To describe current in continuum we can use Gauss's law [4] $$\nabla\cdot E = \frac{\rho}{\varepsilon_0 \varepsilon_r}$$ which represents the relations betwen electric field and charge density in any point.\par
 
 \begin{figure}[h]
     \centering
@@ -87,7 +94,7 @@ To describe current in continuum we can use Gauss's law $$\nabla\cdot E = \frac{
     \label{fig:mesh3}
 \end{figure}
 
-We assumed that away from the electrodes water is electrically neutral, what can be verified with electroscope, so $$\rho = 0 \Rightarrow \nabla \cdot E = 0$$ what is a Laplacian equation, which can be solved knowing boundary conditions. Assuming boundary conditions are -1 V near one electrode and +1 V near the other, we can solve the equation using Wofram Mathematica. The plot is in the figure \ref{fig:mesh3}. \par
+We assumed that away from the electrodes water is electrically neutral, what can be verified with electroscope, so from $$\rho = 0 \Rightarrow \nabla \cdot E = 0$$ what is a Laplacian equation, which can be solved knowing boundary conditions. Assuming boundary conditions are -1 V near one electrode and +1 V near the other, we can solve the equation using Wofram Mathematica. The plot is in the figure \ref{fig:mesh3}. \par
 
 
 
@@ -112,7 +119,13 @@ We assumed that away from the electrodes water is electrically neutral, what can
 \caption{Comparison of theoretical prediction and experiment data for 8.8 grams to 1 kg of water}
 \label{fig:mesh4}
 
-\vfill
+%\vfill
+
+%\end{center}
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
 
 \begin{minipage}[h]{0.47\linewidth}
 \center{\includegraphics[width=1\linewidth]{2.3 g raw.pdf}}
@@ -128,7 +141,11 @@ We assumed that away from the electrodes water is electrically neutral, what can
 \caption{Comparison of theoretical prediction and experiment data for 2.3 grams to 1 kg of water}
 \label{fig:mesh5}
 
-\vfill
+%\vfill
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
 
 \begin{minipage}[h]{0.47\linewidth}
 \center{\includegraphics[width=1\linewidth]{difSol6Norm.pdf}}
@@ -181,7 +198,7 @@ We assumed that away from the electrodes water is electrically neutral, what can
 \end{figure}
 
 
-As we can see in the figures \ref{fig:mesh4} and \ref{fig:mesh5}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 20 \%.} It is caused by the fact theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. For example: if we apply 5V to the electrode, it should be near 5V in water near the electrode. But it does not. \par
+As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif6}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 20 \%.} It is caused by the fact theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. For example: if we apply 5V to the electrode, it should be near 5V in water near the electrode. But it does not. \par
 
 As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. This voltage drop effect can be explained by the phenomenon of double electric layer formation. Free ions, contained in excess in solution, accumulate near the electrodes and create a voltage drop of up to 2V when 5V is applied to the electrode [3].\par
 
@@ -213,9 +230,9 @@ We are thankfull to Artem D. Sukhov for help with writing the article and Ivan K
 \bibliography{references}  
 \begin{enumerate}
 \item Khaparde, Rajesh, and H Pradhan. An Experiment on Equipotential Curves.
-\item Carl Friedrich Gauss. [Mathematische Physik]. Gottingen, Dieterich, 1877.
 \item Kalashnikov, Elektrichestvo. "Nauka, " Glav. Red. Fiziko-Matematicheskoĭ Lit-Ry, Moskva, Nauka, " Glav. Red. Fiziko-Matematicheskoy Lit-Ry, 1985.
 \item A. N. Frumkin, V. S. Bagotsky, Z. A. Iofa, and B. N. Kabanov, Kinetics of Electrode Processes, Moscow State University, 1952.
+\item Carl Friedrich Gauss. [Mathematische Physik]. Gottingen, Dieterich, 1877.
 
 \end{enumerate}
 
