@@ -73,13 +73,14 @@ For making a significant amount of experiments this method is time consuming, so
 \item Work zone: 383 mm x 367 mm
 \item Accuracy: 0.1 mm
 \item Stepper motors 42BYG
+\item Arduino Uno as control board
 \end{enumerate}
 
 In both experimental setups we used \textbf{non-conductive container} to eliminate the possibility of current flowing through the walls.\par
 
 It is important to control the substances dissolved in water, so we used distilled water solution with $Na_2SO_4$, because sodium sulfate does not oxidize electrodes, except for sodium chloride, which we used at first. Electrode oxidizing is harmful, because it changes the composition of the water, what can affect the potentials in the electrolyte.\par
 
-As we observed, potentials are not time-independed some time after applying voltage. Voltage difference between electrodes and near electrolyte is incresaing from 0 to fixed amount (what causes voltage drop near electrodes), so we waited for 1 minute until the potentials get stabilized. More about the phenomenon later. \par
+As we observed, potentials are not time-independed some time after applying voltage. Voltage difference between electrodes and near electrolyte is incresaing from 0 to fixed amount (what causes voltage drop near electrodes), so we waited for 1 minute until the potentials get stabilized. Same effect is observed with the probe, so the probe is needed to move slowly (about 5 mm per second). More about the phenomenon later. \par
 
 
 \section{Theory}
@@ -197,12 +198,11 @@ We assumed that away from the electrodes water is electrically neutral, what can
 \end{figure}
 
 
+Experimenatal and theoretical plots are in the figures \ref{mesh:4} and \ref{mesh:5}. Error of the experiments is about 0.05 V. Measurement of the voltmeter resistance is difficult, because we used Arduino as voltmeter, and it applies a voltage to the sensor pin if the current through the pin is small (about 5 mA). \par
+
 As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif6}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the phenomenon named double electric layer [2]. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
 
-As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. Also, voltage drop depends on the shape of electrodes and time elapsed since applying constant voltage. The effect of voltage drop collapses if the electrolyte gets in motion (perhaps, double layer disintegrates from fluid movement). During the experiments, we waited 1 minute for the voltage drop to stabilize before starting the measurement (AC voltage has not been studied).
-
-% This voltage drop effect can be explained by the phenomenon of double electric layer formation. Free ions, contained in excess in solution, accumulate near the electrodes and create a voltage drop of up to 2V when 5V is applied to the electrode [3].
-\par
+As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. Also, voltage drop depends on the shape of electrodes and time elapsed since applying constant voltage. The effect of voltage drop collapses if the electrolyte gets in motion (perhaps, double layer disintegrates from fluid movement). During the experiments, we waited 1 minute for the voltage drop to stabilize before starting the measurement (AC voltage has not been studied).\par
 
 We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V. Errors are about 0.05V for voltage axis and 5\% for current axis (current was measured in different modes, so the accuracy is proportional to measurement value).
 
