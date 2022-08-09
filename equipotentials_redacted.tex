@@ -4,7 +4,7 @@
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-%\usepackage{hyperref}       % hyperlinks
+\usepackage{hyperref}       % hyperlinks
 %\usepackage{url}            % simple URL typesetting
 %\usepackage{booktabs}       % professional-quality tables
 \usepackage{amsfonts}       % blackboard math symbols
@@ -73,6 +73,7 @@ For making a significant amount of experiments this method is time consuming, so
 \item Work zone: 383 mm x 367 mm
 \item Accuracy: 0.1 mm
 \item Stepper motors 42BYG
+\item MegaPi motor driver
 \item Arduino Uno as control board
 \end{enumerate}
 
@@ -177,47 +178,42 @@ We assumed that away from the electrodes water is electrically neutral, what can
 %\caption{Photo of the biaxical manipulator} %% подпись к рисунку
 %\label{fig:mesh2} %% метка рисунка для ссылки на него
 \end{minipage}
-
-\vfill
-
-\begin{minipage}[h]{0.47\linewidth}
-\center{\includegraphics[width=0.9\linewidth]{2.0 g VAC.pdf}}
-%\caption{Photo of the experiment setup} %% подпись к рисунку
-%\label{fig:mesh1} %% метка рисунка для ссылки на него
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.47\linewidth}
-\center{\includegraphics[width=0.9\linewidth]{9.0 g VAC.pdf}}
-%\caption{Photo of the biaxical manipulator} %% подпись к рисунку
-%\label{fig:mesh2} %% метка рисунка для ссылки на него
-\end{minipage}
-
 \end{center}
 \caption{Electrical Characteristics}
-\label{fig:mesh6}
+\label{fig:VACs}
 \end{figure}
 
+\begin{figure}[htb!]
+\begin{center}
+\center{\includegraphics[width=0.7\linewidth]{2.0 g VAC.pdf}}
+\end{center}
+\caption{Characteristic for considering}
+\label{fig:VAC}
+\end{figure}
+
+Raw data and code for the manipulator can be found at \url{https://github.com/Kirill4Smirnov/Equipotentials}. \par
 
 Experimenatal and theoretical plots are in the figures \ref{fig:mesh4} and \ref{fig:mesh5}. Error of the experiments is about 0.05 V. Measurement of the voltmeter resistance is difficult, because we used Arduino as voltmeter, and it applies a voltage to the sensor pin if the current through the pin is small (about 5 mA). \par
 
-As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif6}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the phenomenon named double electric layer [2]. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
+As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif2}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the phenomenon named double electric layer [2]. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
 
 As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. Also, voltage drop depends on the shape of electrodes and time elapsed since applying constant voltage. The effect of voltage drop collapses if the electrolyte gets in motion (perhaps, double layer disintegrates from fluid movement). During the experiments, we waited 1 minute for the voltage drop to stabilize before starting the measurement (AC voltage has not been studied).\par
 
-We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V. Errors are about 0.05V for voltage axis and 5\% for current axis (current was measured in different modes, therefore the accuracy is proportional to measurement value).
+We measured Electrical Characteristics of different solutions, two plots are in the figure \ref{fig:VACs}. The step of the voltage is 0.5V. Errors are about 0.05V for voltage axis and 5\% for current axis (current was measured in different modes, therefore the accuracy is proportional to measurement value).
 
-As we can see in the figure \ref{fig:mesh6}, all the plots, except for Characteristics of distilled water, look simular: there are 3 areas on a plot, those can be better discerned in green plot in figure \ref{fig:mesh6}. 
 
-%characteristics analysis
+In the figure \ref{fig:VACs} is provided solution characteristic, that is ordinary for all studied solutions: in consists of 3 parts, which are provided in the figure \ref{fig:VAC}. The only exception is distilled water, which characteristic is linear.
+
+Characteristic analysis:
 \begin{enumerate}   
-\item The first piece up to 2V: according to electric layer explanation, the layers formed by free ions compensate for the potential difference between the electrodes, hence effective potential difference is close to 0, therefore current is close to 0.    !!!!!!!!!!!!!!!!!!fix later!!!!!!!!!!!!!!1!
+\item The first piece: according to electric layer explanation, the layers formed by free ions compensate for the potential difference between the electrodes, hence effective potential difference is close to 0, therefore current is close to 0.
 
-\item The second piece from 2.5V to 3.5V. There is transition to a linear section. This piece can be called "activation", and the "activation voltage" we measured is about 3V.
+\item On this piece is transition to a linear section. The piece can be called "activation", and the "activation voltage" we measured is about 3V.
 
-\item The third piece with 3.5V - linear dependence. The electric layers are fully formed and no longer change. The solution can be represented as a series connection of a resistor and a battery, where electric layers are the battery and continuum of water is the resistor. The resistance of the continuum of water depends on the salinity of the solution.
+\item The third piece is a linear dependence. The electric layers are fully formed and no longer change. The solution on this piece can be represented as a series connection of a resistor and a battery, where electric layers are the battery and solution is the resistor. The resistance of the continuum of water depends on the salinity of the solution.
 \end{enumerate}
 
-As we observed, "activation voltage" depends on the shape and the nature of the coating of the electrodes. We used a medical needle 1 mm thick. !!!!!!!!!!!!!!!!!!fix later!!!!!!!!!!!!!!1!
+As we observed, "activation voltage" depends on the shape and the nature of the coating of the electrodes. We used a medical needle 1 mm thick.
 
 
 \section{Acknowledgements}
