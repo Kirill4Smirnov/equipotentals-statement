@@ -149,13 +149,13 @@ We assumed that away from the electrodes water is electrically neutral, what can
 
 \begin{minipage}[h]{0.47\linewidth}
 \center{\includegraphics[width=1\linewidth]{difSol6Norm.pdf}}
-\caption{Normed error of 8.8 grams expirement}
+\caption{Normed error of figure \ref{fig:mesh4} expirement}
 \label{fig:dif6}
 \end{minipage}
 \hfill
 \begin{minipage}[h]{0.47\linewidth}
 \center{\includegraphics[width=1\linewidth]{difSol2Norm.pdf}}
-\caption{Normed error of 2.3 grams expirement}
+\caption{Normed error of figure \ref{fig:mesh5} expirement}
 \label{fig:dif2}
 \end{minipage}
 
@@ -198,13 +198,13 @@ We assumed that away from the electrodes water is electrically neutral, what can
 \end{figure}
 
 
-Experimenatal and theoretical plots are in the figures \ref{mesh:4} and \ref{mesh:5}. Error of the experiments is about 0.05 V. Measurement of the voltmeter resistance is difficult, because we used Arduino as voltmeter, and it applies a voltage to the sensor pin if the current through the pin is small (about 5 mA). \par
+Experimenatal and theoretical plots are in the figures \ref{fig:mesh4} and \ref{fig:mesh5}. Error of the experiments is about 0.05 V. Measurement of the voltmeter resistance is difficult, because we used Arduino as voltmeter, and it applies a voltage to the sensor pin if the current through the pin is small (about 5 mA). \par
 
 As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif6}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the phenomenon named double electric layer [2]. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
 
 As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. Also, voltage drop depends on the shape of electrodes and time elapsed since applying constant voltage. The effect of voltage drop collapses if the electrolyte gets in motion (perhaps, double layer disintegrates from fluid movement). During the experiments, we waited 1 minute for the voltage drop to stabilize before starting the measurement (AC voltage has not been studied).\par
 
-We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V. Errors are about 0.05V for voltage axis and 5\% for current axis (current was measured in different modes, so the accuracy is proportional to measurement value).
+We measured Electrical Characteristics of different solutions, several plots are on figure \ref{fig:mesh6}. The step of the voltage is 0.5V. Errors are about 0.05V for voltage axis and 5\% for current axis (current was measured in different modes, therefore the accuracy is proportional to measurement value).
 
 As we can see in the figure \ref{fig:mesh6}, all the plots, except for Characteristics of distilled water, look simular: there are 3 areas on a plot, those can be better discerned in green plot in figure \ref{fig:mesh6}. 
 
@@ -217,7 +217,7 @@ As we can see in the figure \ref{fig:mesh6}, all the plots, except for Character
 \item The third piece with 3.5V - linear dependence. The electric layers are fully formed and no longer change. The solution can be represented as a series connection of a resistor and a battery, where electric layers are the battery and continuum of water is the resistor. The resistance of the continuum of water depends on the salinity of the solution.
 \end{enumerate}
 
-As we observed, "activation voltage" depends on the geometry and size of the electrodes. We used a medical needle 1 mm thick. !!!!!!!!!!!!!!!!!!fix later!!!!!!!!!!!!!!1!
+As we observed, "activation voltage" depends on the shape and the nature of the coating of the electrodes. We used a medical needle 1 mm thick. !!!!!!!!!!!!!!!!!!fix later!!!!!!!!!!!!!!1!
 
 
 \section{Acknowledgements}
