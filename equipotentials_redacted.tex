@@ -13,6 +13,7 @@
 %\usepackage{lipsum}
 %\usepackage{fancyhdr}       % header
 \usepackage{graphicx}       % graphics
+\usepackage{verbatim} 
 
 \graphicspath{{./images/}}     % organize your images and other figures under media/ folder
 
@@ -86,7 +87,7 @@ As we observed, potentials are not time-independed some time after applying volt
 
 \section{Theory}
 
-To describe current in continuum we can use Gauss's law [\ref{ref:gauss}] $$\nabla\cdot E = \frac{\rho}{\varepsilon_0 \varepsilon_r}$$ which represents the relations betwen electric field and charge density in any point.\par
+To describe current in continuum we can use Gauss's law \cite{gauss} $$\nabla\cdot E = \frac{\rho}{\varepsilon_0 \varepsilon_r}$$ which represents the relations betwen electric field and charge density in any point.\par
 
 \begin{figure}[h]
     \centering
@@ -196,7 +197,7 @@ Raw data and code for the manipulator can be found at \url{https://github.com/Ki
 
 Experimenatal and theoretical plots are in the figures \ref{fig:mesh4} and \ref{fig:mesh5}. Error of the experiments is about 0.05 V. Measurement of the voltmeter resistance is difficult, because we used Arduino as voltmeter, and it applies a voltage to the sensor pin if the current through the pin is small (about 5 mA). \par
 
-As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif2}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the phenomenon named double electric layer [2]. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
+As we can see in the figures \ref{fig:mesh4}, \ref{fig:mesh5}, \ref{fig:dif6} and \ref{fig:dif2}, the theory can quite accurate predict the shape of the eqiupotentional curves, but gives too big error in prediction a specific potential. \textbf{The max error is about 80 \% near electrodes.} From electrochemistry we know about the phenomenon named double electric layer \cite{kinetika}. The phenomenon causes voltage drop near electrodes, so potential in the electrolyte around the electrodes is different from the electrode potential. But the theoretical model works on the assumption that we know potential near the electrodes. We assumed that potential near a electrode approximately equals to the potential on the electrode. But because of the voltage drop it does not. \par
 
 As we observed, if we apply 5V to the electrode, the voltage near it is about 3.5 - 4.0 V and depends on the water salinity. Also, voltage drop depends on the shape of electrodes and time elapsed since applying constant voltage. The effect of voltage drop collapses if the electrolyte gets in motion (perhaps, double layer disintegrates from fluid movement). During the experiments, we waited 1 minute for the voltage drop to stabilize before starting the measurement (AC voltage has not been studied).\par
 
@@ -218,21 +219,28 @@ As we observed, "activation voltage" depends on the shape and the nature of the 
 
 
 \section{Acknowledgements}
-We are thankfull to Artem D. Sukhov for help with writing the article and Ivan Kolesnikov for providing the nessesary support with theory. We are also grateful to Pavel A. Kotin for providing the necessary conditions for the research.
+We are thankfull to Artem D. Sukhov for help with writing the article and Ivan Kolesnikov for providing the nessesary support with theory. We are also grateful to Pavel A. Kotin for providing the necessary conditions for the research. \cite{khaparde}
 
 
 
 %Bibliography
-\bibliographystyle{unsrt}  
-\bibliography{references}  
-\begin{enumerate}
-\item Khaparde, Rajesh, and H Pradhan. An Experiment on Equipotential Curves.
-%\item Kalashnikov, Elektrichestvo. "Nauka, " Glav. Red. Fiziko-Matematicheskoĭ Lit-Ry, Moskva, Nauka, " Glav. Red. Fiziko-Matematicheskoy Lit-Ry, 1985.
-\item A. N. Frumkin, V. S. Bagotsky, Z. A. Iofa, and B. N. Kabanov, Kinetics of Electrode Processes, Moscow State University, 1952.
 
-\item Carl Friedrich Gauss. [Mathematische Physik]. Gottingen, Dieterich, 1877.
-\label{ref:gauss}
+%\bibliographystyle{unsrt}  
+%\bibliography{references}  
+%\begin{enumerate}
+%\item Khaparde, Rajesh, and H Pradhan. An Experiment on Equipotential Curves.
+%\label{bib:experiment}
 
-\end{enumerate}
+%\item A. N. Frumkin, V. S. Bagotsky, Z. A. Iofa, and B. N. Kabanov, Kinetics of Electrode Processes, Moscow State University, 1952.
+%\label{bib:kinetic}
+
+%\item Carl Friedrich Gauss. [Mathematische Physik]. Gottingen, Dieterich, 1877.
+%\label{bib:gauss}
+
+%\end{enumerate}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
 
 \end{document}
