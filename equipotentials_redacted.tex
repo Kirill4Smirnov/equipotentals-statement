@@ -81,14 +81,8 @@ We have researched the subject in the condition of two small cylindrical electro
 
 For the simplest experimental setup are needed the following materials: a container with electrolyte (distilled water), a DC power supply with two electrodes, and a voltmeter. Put the electrodes in the water, turn on the power, and measure the voltage with a voltmeter. Also, a non-conductive checkered sheet can be put in the water to know the coordinates of the point you are measuring. Scheme is in the figure \ref{fig:mesh1}.  \par
 
-For making a significant amount of experiments this method is time-consuming, so we robotized the measuring process. We used a biaxial manipulator, that can move the voltmeter probe and write the measure value and coordinates of the probe to a file on a computer. 	. Manipulator characteristics:
-\begin{enumerate}
-\item Work zone: 383 mm x 367 mm
-\item Accuracy: 0.1 mm
-\item Stepper motors 42BYG
-\item MegaPi motor driver
-\item Arduino UNO as control board
-\end{enumerate}
+For making a significant amount of experiments this method is time-consuming, so we robotized the measuring process. We used a biaxial manipulator, that can move the voltmeter probe and write the measure value and coordinates of the probe to a file on a computer. The manipulator has a 383 x 367 mm work zone with an accuracy of 0.1 mm. It contains 2 42BYG stepper motors and a MegaPi motor driver. We used Arduino Uno as a control board.
+
 
 In both experimental setups, we used \textbf{non-conductive container} to eliminate the possibility of current flowing through the walls.\par
 
